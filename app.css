@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container { 
+    width: 960px;
+    height: 960px;
+    margin: auto;
+    border: 3px solid black;
+    display: grid;
+    
+}
+
+.moused {
+    background-color: black;
+}
