@@ -3,15 +3,52 @@ body {
     padding: 0;
 }
 
-.container { 
-    width: 960px;
-    height: 960px;
-    margin: auto;
-    border: 3px solid black;
-    display: grid;
-    
+.title {
+    font-family: cursive;
+    text-align: center;
+    color: gold;
+    font-size: 2.5rem;
 }
 
+.title span {
+    font-size: 1.25rem;
+    padding-inline: 2rem;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: 200;
+    
+}
+.container {
+    width: 45vw;
+    height: 45vw;
+    margin: auto;
+    display: grid;
+    background-color: white;
+}
+
+.frame {
+    margin-top: 5rem;
+    margin-inline: auto;
+    width: 55vw;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+}
 .moused {
     background-color: black;
+}
+
+.button-group {
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+#clear, #color-button{
+    margin: 1rem 1rem;
+    background-color: white;
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+    cursor: pointer;
 }
