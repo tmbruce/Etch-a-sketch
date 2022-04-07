@@ -1,6 +1,8 @@
 let container = document.querySelector('#container');
 let clearButton = document.querySelector('#clear');
 let colorButton = document.querySelector('#color-button');
+let rangeSlider = document.querySelector('#range');
+let sliderLabel = document.querySelector('label');
 
 let colorOptions = ['RGB', 'GRAY', 'BLACK'];
 
@@ -19,17 +21,29 @@ colorButton.addEventListener('click', () => {
     }
 });
 
-clearButton.addEventListener('click', () => {
-    for (let i = 0; i < container.children.length; i++) {
-        container.children[i].style.cssText = 'background-color: white;';
+const reset = () => {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
     }
+}
+
+clearButton.addEventListener('click', () => {
+    reset();
+});
+
+rangeSlider.addEventListener('input', () => {
+    sliderLabel.textContent = rangeSlider.value.toString();
+});
+
+rangeSlider.addEventListener('mouseup', () => {
+    reset();
+    createDivs(rangeSlider.value);
 });
 
 window.addEventListener('keydown', (e) => {
     if (e.key == 'e') {
         erasing = true;
     }
-    console.log(erasing);
 })
 
 window.addEventListener('keyup', (e) => {
@@ -45,11 +59,8 @@ const randomColor = () => {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-const moreGray = (value) => {
-
-}
-
 const createDivs = (num) => {
+    container.chidren
     container.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
     for (let i = 0; i < num**2; i++){    
         let newDiv = document.createElement('div');
@@ -69,14 +80,10 @@ const createDivs = (num) => {
                         currentColor = newDiv.style.backgroundColor;
                         let extractColor = (/\d{1,3}/);
                         newColor = Math.floor(parseInt(extractColor.exec(currentColor)[0]) * 0.9);
+                        newColor == 0 ? newDiv.style.cssText = 'background-color: rgb(255, 255, 255);' :
                         newDiv.style.cssText = `background-color: rgb(${newColor}, ${newColor}, ${newColor})`
-                        break;
-                        
+                        break; 
                 }
-            //     if (colorOptions[colorSelection] == 'black') {
-            //         newDiv.style.cssText = 'background-color: black;';
-            //     } else
-            
             }
         });
         container.appendChild(newDiv);

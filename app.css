@@ -46,9 +46,25 @@ body {
 }
 #clear, #color-button{
     margin: 1rem 1rem;
-    background-color: white;
     border-radius: 50%;
+    border: 2px solid black;
+    background-color: white;
     height: 5rem;
     width: 5rem;
     cursor: pointer;
+}
+
+.slidecontainer {
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    padding-bottom: .5rem;
+    color: gold;
+    font-family: sans-serif;
+    font-size: 1.5rem;
 }
