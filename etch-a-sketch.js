@@ -21,15 +21,20 @@ colorButton.addEventListener('click', () => {
     }
 });
 
+const clearScreen = () => {
+    for (let i = 0; i < container.children.length; i++) {
+        container.children[i].style.cssText = 'background-color: rgb(255, 255, 255);';
+    }
+}
+
 const reset = () => {
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
-    createDivs(rangeSlider.value);
 }
 
 clearButton.addEventListener('click', () => {
-    reset();
+    clearScreen();
 });
 
 rangeSlider.addEventListener('input', () => {
