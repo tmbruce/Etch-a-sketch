@@ -25,6 +25,7 @@ const reset = () => {
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
+    createDivs(rangeSlider.value)
 }
 
 clearButton.addEventListener('click', () => {
