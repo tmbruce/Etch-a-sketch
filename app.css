@@ -19,15 +19,14 @@ body {
     
 }
 .container {
-    width: 45vw;
-    height: 45vw;
+    width: 43vw;
+    height: 43vw;
     margin: auto;
     display: grid;
     background-color: white;
 }
 
 .frame {
-    margin-top: 5rem;
     margin-inline: auto;
     width: 55vw;
     background-color: red;
